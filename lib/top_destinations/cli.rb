@@ -32,10 +32,9 @@ class TopDestinations::CLI
   def show_details_for(chosen_dest)
     dest = @dests[chosen_dest - 1]
     dest.get_details
+    puts "----------------------------------------"
     puts"Your Destination Awaits, say Hello to #{dest.name}"
     puts "----------------------------------------"
-    puts "---------------Photo Link--------------"
-    puts "Photo Link:  #{dest.image_url}"
     puts ""
     puts "---------------Description--------------"
     puts " #{dest.descrip}"

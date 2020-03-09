@@ -1,12 +1,11 @@
 class TopDestinations::Destination
 
-  attr_accessor :name, :ref, :dests
+  attr_accessor :name, :dests
 
   @@all = []
   
-  def initialize(name, ref)
+  def initialize(name)
     @name = name
-    @ref = ref
     @dests = []
     save
   end   
@@ -17,8 +16,8 @@ class TopDestinations::Destination
   end
   
    
-  def get_dests
-    TopDestinations::Scraper.scrape_dests(self) if @dests.empty?
+  def get_details
+    TopDestinations::Scraper.scrape_dests if @dests.empty?
   end
   
   def save
