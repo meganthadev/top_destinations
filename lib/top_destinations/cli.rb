@@ -43,6 +43,10 @@ class TopDestinations::CLI
     puts ""
   end 
   
+    def goodbye
+      puts "Contact us, we look forward to making your Banana Blammah traveling dreams come true!"
+   end
+  
   def what_next
     puts "Contact us for the best travel experience there is! 
     Would you like to see a different destination? Please enter Y or N"
@@ -51,11 +55,10 @@ class TopDestinations::CLI
       call
     elsif @input == "N"
       goodbye
+      exit
   end 
   
-  def goodbye
-    puts "Contact us, we look forward to making your Banana Blammah traveling dreams come true!"
-  end
+
   
 end
 end 
