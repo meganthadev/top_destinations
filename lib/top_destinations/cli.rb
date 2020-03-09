@@ -2,15 +2,13 @@ class TopDestinations::CLI
   
   def call 
     puts "Welcome to the land of tropical island facts, brought to you by 'Banana Blammah Islands, quench your thirst for Island Living!'™"
-    @input = ""
-    until @input == "exit"
     get_dest
     list_dests
     get_user_dest
-    go_on
   end 
   
   def get_dest 
+    
     @dests = TopDestinations::Destination.all
   end 
     
@@ -18,7 +16,7 @@ class TopDestinations::CLI
     puts ""
     puts "Choose a destination # to see a photo, description and interesting facts!"
     @dests.each_with_index do |dest, index| 
-      puts "#{index + 1}. #{dest}"
+      puts "#{index = 1}. #{dest.name}"
     end 
   end   
     
@@ -46,44 +44,6 @@ class TopDestinations::CLI
     puts "----------------------------------------"
     puts "Fun Facts:  #{restaurant.facts}"
     puts ""
-  end   
-    
-  def go_on  
-    puts ""
-    puts "Contact us for the best travel experience there is! 
-    Would you like to see a different destination? Please enter Y or N"
-
-    input = gets.strip.downcase
-    if input == "y"
-      start
-    elsif input == "n"
-      puts ""
-      puts "Contact us, we look forward to making your Banana Blammah traveling dreams come true!"
-      exit
-    else
-      puts ""
-      puts "Sorry, I don't understand that answer."
-      start
-    end
-  end   
-  
-  
-  #def print_dest(destination)
- #  puts ""
-  #  puts "----------- #{destination.name} -----------"
- #   puts ""
-  #  puts "Image Link:  #{destination.image_url}"
-  #  puts ""
-  #  puts "---------------Description-----------------"
-  #  puts ""
-  #  puts " Description: #{destination.descrip}"
-  #  puts ""
-  #  puts "---------------Fun Facts-------------------"
-  #  puts ""
-   # puts "Fun Facts:  #{destination.facts}"
-   # puts ""
-  #end
-  
-  
-
-end   
+  end 
+   
+end     

@@ -1,7 +1,9 @@
 class TopDestinations::Scraper
   
-  def get_page
-     Nokogiri::HTML(open("https://www.nomadicmatt.com/travel-blogs/top-ten-best-tropical-islands"))
+  def scrape_page
+    doc = Nokogiri::HTML(open("https://www.nomadicmatt.com/travel-blogs/top-ten-best-tropical-islands"))
+    binding.pry
+    end  
         
        
   def make_destinations   
@@ -12,3 +14,5 @@ class TopDestinations::Scraper
             name = dest.text
             Destination.new(name)
         end
+       end 
+end         
