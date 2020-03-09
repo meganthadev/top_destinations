@@ -50,11 +50,15 @@ class TopDestinations::CLI
     puts ""
     puts "----------- #{destination.name} -----------"
     puts ""
-    puts "Image Link:            #{destination.image_url}"
+    puts "Image Link:  #{destination.image_url}"
     puts ""
-    puts "---------------Interesting Facts--------------"
+    puts "---------------Description-----------------"
     puts ""
-    puts "Details:  #{destination.facts}"
+    puts " Description: #{destination.descrip}"
+    puts ""
+    puts "---------------Fun Facts-------------------"
+    puts ""
+    puts "Fun Facts:  #{destination.facts}"
     puts ""
   end
   
