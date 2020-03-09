@@ -5,6 +5,7 @@ class TopDestinations::CLI
     get_dest
     list_dests
     get_user_dest
+    go_on
   end 
   
   def get_dest 
@@ -36,7 +37,7 @@ class TopDestinations::CLI
     puts"Your Destination, #{dest}"
   end   
     
-    
+  def go_on  
     puts ""
     puts "Contact us for the best travel experience there is! Would you like to see a different destination? Please enter Y or N"
 
@@ -54,42 +55,23 @@ class TopDestinations::CLI
     end
   end   
   
-   def print_destinations(from_number)
-    puts ""
-    puts "---------- Destination #{from_number} - #{from_number+9} ----------"
-    puts ""
-    TopDestinations::Destination.all[from_number-1, 10].each.with_index(from_number) do |dest, index|
-      puts "#{index}. #{dest.name}"
-    end
-  end
   
-  def print_dest(destination)
-    puts ""
-    puts "----------- #{destination.name} -----------"
-    puts ""
-    puts "Image Link:  #{destination.image_url}"
-    puts ""
-    puts "---------------Description-----------------"
-    puts ""
-    puts " Description: #{destination.descrip}"
-    puts ""
-    puts "---------------Fun Facts-------------------"
-    puts ""
-    puts "Fun Facts:  #{destination.facts}"
-    puts ""
-  end
+  #def print_dest(destination)
+ #  puts ""
+  #  puts "----------- #{destination.name} -----------"
+ #   puts ""
+  #  puts "Image Link:  #{destination.image_url}"
+  #  puts ""
+  #  puts "---------------Description-----------------"
+  #  puts ""
+  #  puts " Description: #{destination.descrip}"
+  #  puts ""
+  #  puts "---------------Fun Facts-------------------"
+  #  puts ""
+   # puts "Fun Facts:  #{destination.facts}"
+   # puts ""
+  #end
   
-  def get_dest_list
-    #will be scraped
-    @destinations = [1, 2, 3]
-  end 
-  
-  def get_user_list
-    chosen.list = gets.strip
-    @destinations.each_with_index(1) do |index, dest| 
-     puts "#{index} #{dest}"
-      end
-    end 
   
 
 end   
