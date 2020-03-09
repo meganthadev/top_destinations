@@ -24,6 +24,7 @@ Or install it yourself as:
 ## Usage
 
 TODO: Write usage instructions here
+Command Line Interface for retrieiving travel destination facts and an image for the destination.
 
 ## Development
 
