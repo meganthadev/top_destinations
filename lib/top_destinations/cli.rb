@@ -47,9 +47,15 @@ class TopDestinations::CLI
     puts "Contact us for the best travel experience there is! 
     Would you like to see a different destination? Please enter Y or N"
     @input = gets.strip
+    if @input == "Y"
+      call
+    elsif @input == "N"
+      goodbye
   end 
   
   def goodbye
     puts "Contact us, we look forward to making your Banana Blammah traveling dreams come true!"
-  end 
+  end
+  
+end
 end 
