@@ -15,8 +15,8 @@ class TopDestinations::CLI
   def list_dests
     puts ""
     puts "Choose a destination # to see a photo, description and interesting facts!"
-    @dests.each_with_index(1) do |dest, index| 
-      puts "#{index}. #{dest}"
+    @dests.each_with_index do |dest, index| 
+      puts "#{index + 1}. #{dest}"
     end 
   end   
     
@@ -34,12 +34,22 @@ class TopDestinations::CLI
     dest = @dests[chosen_dest - 1]
     puts ""
     puts"Your Destination Awaits, say Hello to #{dest}"
-    binding.pry
+    puts ""
+    puts "----------- #{dest.name}----------------"
+    puts "----------------------------------------"
+    puts "---------------Photo Link--------------"
+    puts "Photo Link:  #{dest.image_ul}"
+    puts "---------------Description--------------"
+    puts "--------- #{dest.descrip}-----------------"
+    puts "----------------------------------------"
+    puts "Fun Facts:  #{restaurant.facts}"
+    puts ""
   end   
     
   def go_on  
     puts ""
-    puts "Contact us for the best travel experience there is! Would you like to see a different destination? Please enter Y or N"
+    puts "Contact us for the best travel experience there is! 
+    Would you like to see a different destination? Please enter Y or N"
 
     input = gets.strip.downcase
     if input == "y"
