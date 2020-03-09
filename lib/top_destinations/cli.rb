@@ -14,7 +14,7 @@ class TopDestinations::CLI
     
   def list_dests
     puts ""
-    puts "Which destination would you like to see a photo and interesting facts for?"
+    puts "Choose a destination # to see a photo, description and interesting facts!"
     @dests.each_with_index(1) do |dest, index| 
       puts "#{index}. #{dest}"
     end 
@@ -28,13 +28,13 @@ class TopDestinations::CLI
   
   def valid_input(input, data)
     input.to_i <= data.length && input.to_i > 0
-    end 
   end 
   
   def show_dest_for(chosen_dest)
-    dest = @dests(chosen_dest - 1)
+    dest = @dests[chosen_dest - 1]
     puts ""
-    puts"Your Destination, #{dest}"
+    puts"Your Destination Awaits, say Hello to #{dest}"
+    binding.pry
   end   
     
   def go_on  
