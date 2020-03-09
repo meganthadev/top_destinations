@@ -1,11 +1,12 @@
 class TopDestinations::Destination
 
-  attr_accessor :name, :dests
+  attr_accessor :name, :facts, :dests
 
   @@all = []
   
   def initialize(name)
     @name = name
+    @facts = facts
     @dests = []
     save
   end   

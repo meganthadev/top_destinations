@@ -5,6 +5,8 @@ class TopDestinations::CLI
     get_dests
     list_dests
     get_user_dest
+    what_next
+    goodbye
   end 
   
   def get_dests 
@@ -30,18 +32,24 @@ class TopDestinations::CLI
   end 
   
   def show_details_for(chosen_dest)
-    dest = @dests[chosen_dest - 1]
+    dest = @dests[chosen_dest -1]
     dest.get_details
     puts "----------------------------------------"
-    puts"Your Destination Awaits, say Hello to #{dest.name}"
+    puts"Your Destination Awaits, say Hello to ##{dest.name}"
     puts "----------------------------------------"
     puts ""
-    puts "---------------Description--------------"
-    puts " #{dest.descrip}"
-    puts "----------------------------------------"
     puts "Fun Facts:
                  #{dest.facts}"
     puts ""
   end 
-   
-end     
+  
+  def what_next
+    puts "Contact us for the best travel experience there is! 
+    Would you like to see a different destination? Please enter Y or N"
+    @input = gets.strip
+  end 
+  
+  def goodbye
+    puts "Contact us, we look forward to making your Banana Blammah traveling dreams come true!"
+  end 
+end 
