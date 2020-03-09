@@ -15,7 +15,7 @@ class TopDestinations::CLI
     
   def list_dests
     puts ""
-    puts "Choose a destination # to see a photo, description and interesting facts!"
+    puts "Choose a destination # to see some interesting facts!"
     @dests.each_with_index do |dest| 
       puts " #{dest.name}"
     end 
