@@ -12,6 +12,10 @@ class TopDestinations::Destination
       x.css(".position").text
       )
   end
+  
+  def self.save
+    @@all << self
+  end   
     
   
   def doc

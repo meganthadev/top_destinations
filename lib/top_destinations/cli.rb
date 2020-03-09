@@ -2,6 +2,8 @@ class TopDestinations::CLI
   
   def call 
     puts "Welcome to the land of tropical island facts, brought to you by 'Banana Blammah Islands, quench your thirst for Island Living!'™"
+    @input = ""
+    until @input == "exit"
     get_dest
     list_dests
     get_user_dest
@@ -9,7 +11,7 @@ class TopDestinations::CLI
   end 
   
   def get_dest 
-    @dests = ['A', 'B','C', 'D']
+    @dests = TopDestinations::Destination.all
   end 
     
   def list_dests
