@@ -2,23 +2,40 @@ class TopDestinations::CLI
   
   def call 
     puts "Welcome to the land of tropical island facts, brought to you by 'Banana Blammah Islands, quench your thirst for Island Living!'™"
-    start
+    get_dest
+    list_dests
+    get_user_dest
   end 
   
-  def start 
+  def get_dest 
+    @dests = ['A', 'B','C', 'D']
+  end 
+    
+  def list_dests
     puts ""
-    puts "Which destinations would you like to see? 1-10 or 11-20?"
-    input = gets.strip.to_i
+    puts "Which destination would you like to see a photo and interesting facts for?"
+    @dests.each_with_index(1) do |dest, index| 
+      puts "#{index}. #{dest}"
+    end 
+  end   
     
-    print_dest(input)
     
-    destination = TopDestinations::Destination.find(input.to_i)
-    
+  def get_user_dest
+    chosen_dest = gets.strip.to_i
+    show_dest_for(chosen_dest) if valid_input(chosen_dest, @dests)
+  end 
+  
+  def valid_input(input, data)
+    input.to_i <= data.length && input.to_i > 0
+    end 
+  end 
+  
+  def show_dest_for(chosen_dest)
+    dest = @dests(chosen_dest - 1)
     puts ""
-    puts "Which destination would you like to see interesting facts for?"
-    input = gets.strip
+    puts"Your Destination, #{dest}"
+  end   
     
-    print_dest(destination)
     
     puts ""
     puts "Contact us for the best travel experience there is! Would you like to see a different destination? Please enter Y or N"

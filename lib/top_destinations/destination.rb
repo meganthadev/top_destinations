@@ -1,25 +1,26 @@
-class WorldsBestRestaurants::Restaurant
+class TopDestinations::Destination
 
-  attr_accessor :name, :image_url, :facts
+  attr_accessor :name, :image_url, :description, :facts
 
   @@all = []
+  
+  def self.new_from_doc(x)
+    self.new(
+      x.css("h3").text,
+      "https://www.nomadicmatt.com#{r.css("a").attribute("href").text}",
+      x.css("h3").text,
+      x.css(".position").text
+      )
+  end
+    
   
   def doc
     @doc ||= Nokogiri::HTML(open(self.url))
   end
-  
-  def self.new_from_index_page(r)
-    self.new(
-      r.css("h2").text,
-      "https://www.theworlds50best.com#{r.css("a").attribute("href").text}",
-      r.css("h3").text,
-      r.css(".position").text
-      )
-  end
 
-  def initialize(name=nil, url=nil, description=nil, facts=nil)
+  def initialize(name=nil, image_url=nil, description=nil, facts=nil)
     @name = name
-    @url = url
+    @image_url = url
     @description = description
     @facts = facts
     @@all << self
@@ -29,8 +30,8 @@ class WorldsBestRestaurants::Restaurant
     @@all
   end
 
-  def self.find(id)
-    self.all[id-1]
+  def self.find(x)
+    self.all[x-1]
   end
 
     def image_url

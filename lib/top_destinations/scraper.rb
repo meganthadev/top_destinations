@@ -1,11 +1,16 @@
-class Scraper
+require 'nokogiri'
+require 'open-uri'
+class TopDestinations::Scraper
   
-  
-   html = open("https://www.nomadicmatt.com/travel-blogs/top-ten-best-tropical-islands")
-        doc = Nokogiri::HTML(html)
+  def get_page
+     Nokogiri::HTML(open("https://www.nomadicmatt.com/travel-blogs/top-ten-best-tropical-islands"))
+        
+       
+  def make_destinations   
         entry_content = doc.css(".entry-content")
         h3_array = entry_content.css("h3")
         h3_array.each do |dest|
+          
             name = dest.text
-            Destnation.new(name)
+            Destination.new(name)
         end
