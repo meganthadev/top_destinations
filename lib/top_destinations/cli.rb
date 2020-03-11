@@ -1,3 +1,4 @@
+require 'pry'
 class TopDestinations::CLI
   
   def call 
@@ -12,6 +13,7 @@ class TopDestinations::CLI
   def get_dests 
     @dests = TopDestinations::Destination.all
   end 
+
     
   def list_dests
     puts ""
@@ -31,9 +33,9 @@ class TopDestinations::CLI
     input.to_i <= data.length && input.to_i > 0
   end 
   
+  
   def show_details_for(chosen_dest)
     dest = @dests[chosen_dest -1]
-    dest.get_details
     puts "----------------------------------------"
     puts"Your Destination Awaits, say Hello to ##{dest.name}"
     puts "----------------------------------------"
@@ -41,7 +43,7 @@ class TopDestinations::CLI
     puts "Fun Facts:
                  #{dest.facts}"
     puts ""
-  end 
+   end 
   
     def goodbye
       puts "Contact us, we look forward to making your Banana Blammah traveling dreams come true!"
@@ -56,9 +58,10 @@ class TopDestinations::CLI
     elsif @input == "N"
       goodbye
       exit
+    else puts "Sorry, I don't understand that choice."
+      what_next
   end 
   
-
   
 end
 end 

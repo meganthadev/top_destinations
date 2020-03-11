@@ -7,8 +7,10 @@ require_relative "./top_destinations/scraper"
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'bundler'
+
+Bundler.require
 
 module TopDestinations
   class Error < StandardError; end
-  # Your code goes here...
 end
