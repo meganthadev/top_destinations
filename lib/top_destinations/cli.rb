@@ -2,6 +2,7 @@ require 'pry'
 class TopDestinations::CLI
   
   def call 
+    puts ""
     puts "Welcome to the land of tropical island facts, brought to you by 'Banana Blammah Islands, quench your thirst for Island Living!'™"
     get_dests
     list_dests
@@ -50,6 +51,7 @@ class TopDestinations::CLI
    end
   
   def what_next
+    puts ""
     puts "Contact us for the best travel experience there is! 
     Would you like to see a different destination? Please enter Y or N"
     @input = gets.strip
@@ -58,7 +60,8 @@ class TopDestinations::CLI
     elsif @input == "N"
       goodbye
       exit
-    else puts "Sorry, I don't understand that choice."
+    else puts ""
+      puts "Sorry, I don't understand that choice."
       what_next
   end 
   
