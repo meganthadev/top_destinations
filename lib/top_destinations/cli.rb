@@ -55,7 +55,7 @@ class TopDestinations::CLI
     puts ""
     puts "Contact us for the best travel experience there is! 
     Would you like to see a different destination? Please enter Y or N"
-    @input = gets.strip
+    @input = gets.strip.upcase
     if @input == "Y"
       call
     elsif @input == "N"
