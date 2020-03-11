@@ -17,11 +17,12 @@ class TopDestinations::Scraper
     html = open("https://www.nomadicmatt.com/travel-blogs/top-ten-best-tropical-islands/")
         doc = Nokogiri::HTML(html)
         entry_content = doc.css(".entry-content")
-        info = doc.css(".entry-content ul li li li").text.strip
-        info.each do |dest|
-          facts = dest.text
-        TopDestinations::Destination.new(facts)
+        info = entry_content.css("ul")
+        info.pop 
+        info.each_with_index do |facts, i|
+        TopDestinations::Destination.all[i].facts = facts.text
+        end   
         end
-      end   
+         
       
 end         

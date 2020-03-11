@@ -19,6 +19,7 @@ class TopDestinations::CLI
   def list_dests
     puts ""
     puts "Choose a destination # to see some interesting facts!"
+    puts ""
     @dests.each_with_index do |dest| 
       puts " #{dest.name}"
     end 
@@ -58,6 +59,7 @@ class TopDestinations::CLI
     if @input == "Y"
       call
     elsif @input == "N"
+      TopDestinations::Scraper.scrape_info
       goodbye
       exit
     else puts ""
