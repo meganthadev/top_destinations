@@ -5,6 +5,7 @@ class TopDestinations::CLI
     puts ""
     puts "Welcome to the land of tropical island facts, brought to you by 'Banana Blammah Islands, quench your thirst for Island Living!'™"
     get_dests
+    get_facts
     list_dests
     get_user_dest
     what_next
@@ -13,7 +14,14 @@ class TopDestinations::CLI
   
   def get_dests 
     @dests = TopDestinations::Destination.all
+    
   end 
+  
+  def get_facts 
+    TopDestinations::Scraper.scrape_dests
+    TopDestinations::Scraper.scrape_info
+  end   
+
 
     
   def list_dests
