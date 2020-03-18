@@ -18,7 +18,6 @@ class TopDestinations::CLI
   end 
   
   def get_facts 
-    TopDestinations::Scraper.scrape_dests
     TopDestinations::Scraper.scrape_info
   end   
 
