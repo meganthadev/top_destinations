@@ -1,7 +1,6 @@
 1. flow 
-2.  user starts app, they select a destination, I scrape the desintation objects for their image links and interesting facts
-2. classes
-3. 
+2. user starts app, they select a destination, I scrape the desintation objects for their image links and interesting facts
+3. classes
 
 
 - user is given list of dests

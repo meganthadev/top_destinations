@@ -16,11 +16,6 @@ class TopDestinations::Destination
     @@all
   end
   
-   
-  def get_facts
-    TopDestinations::Scraper.scrape_info if @facts.empty?
-  end
-  
   def save
     @@all << self
   end  

@@ -1,4 +1,3 @@
-require 'pry'
 class TopDestinations::CLI
   
   def call 
@@ -20,8 +19,6 @@ class TopDestinations::CLI
   def get_facts 
     TopDestinations::Scraper.scrape_info
   end   
-
-
     
   def list_dests
     puts ""
@@ -72,8 +69,8 @@ class TopDestinations::CLI
     else puts ""
       puts "Sorry, I don't understand that choice."
       what_next
-  end 
+   end 
+  end
   
   
-end
 end 

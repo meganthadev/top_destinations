@@ -1,4 +1,3 @@
-require 'pry'
 class TopDestinations::Scraper
   
   
@@ -8,8 +7,8 @@ class TopDestinations::Scraper
         entry_content = doc.css(".entry-content")
         h3_array = entry_content.css("h3")
         h3_array.each do |dest|
-            name = dest.text 
-            TopDestinations::Destination.new(name)
+          name = dest.text 
+          TopDestinations::Destination.new(name)
         end
       end  
       
@@ -22,7 +21,7 @@ class TopDestinations::Scraper
         info.each_with_index do |facts, i|
         TopDestinations::Destination.all[i].facts = facts.text
         end   
-        end
+      end
          
       
 end         
