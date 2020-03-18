@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "top_destinations"
+#require "top_destinations"
 
+require_relative "../lib/environment"
 
 
 require "irb"

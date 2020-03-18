@@ -1,4 +1,5 @@
 class TopDestinations::CLI
+
   
   def call 
     puts ""
@@ -13,11 +14,11 @@ class TopDestinations::CLI
   
   def get_dests 
     @dests = TopDestinations::Destination.all
-    
+    TopDestinations::Scraper.scrape_dests if @dests.empty?
   end 
   
   def get_facts 
-    TopDestinations::Scraper.scrape_info
+    TopDestinations::Scraper.scrape_info if @dests[0].facts.nil?
   end   
     
   def list_dests

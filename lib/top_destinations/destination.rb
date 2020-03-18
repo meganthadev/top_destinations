@@ -1,4 +1,3 @@
-
 class TopDestinations::Destination
 
   attr_accessor :name, :facts
@@ -12,8 +11,7 @@ class TopDestinations::Destination
   end   
   
   def self.all
-     TopDestinations::Scraper.scrape_dests if @@all.empty?
-    @@all
+     @@all
   end
   
   def save
